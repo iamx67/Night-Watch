@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ночные стражи</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Боковая панель -->
+        <div class="sidebar">
+            <button id="patrolTab" class="tab active">Сбор ночного патруля</button>
+            <button id="reportTab" class="tab">Составление отчета дозора</button>
+        </div>
+        <!-- Основной контент -->
+        <div class="content">
+            <!-- Раздел: Сбор ночного патруля -->
+            <div id="patrolSection" class="section active">
+                <h1>Сбор ночного патруля</h1>
+                <label for="patrolMembers">Вставьте участников (через запятую) и выберите ведущих (нажатием):</label>
+                <input type="text" id="patrolMembers" placeholder="Введите имена участников">
+
+                <div id="memberList" class="clickable-list"></div>
+
+                <button id="assemblePatrol" class="btn">Собрать патруль</button>
+
+                <div id="patrolResult" class="result"></div>
+
+                <h2>Составление отчета патруля</h2>
+                <label for="patrolType">Тип патруля:</label>
+                <select id="patrolType">
+                    <option value="Ранний">Ранний</option>
+                    <option value="Поздний">Поздний</option>
+                </select>
+
+                <div class="violations">
+                    <button id="noViolations" class="btn small">Не было нарушителей</button>
+                    <button id="yesViolations" class="btn small">Были нарушители</button>
+                    <div class="hidden">
+                        <label for="violators">Нарушители (Имя (id), через запятую):</label>
+                        <input type="text" id="violators" placeholder="Введите нарушителей">
+                    </div>
+                </div>
+
+                <button id="generatePatrolReport" class="btn">Составить отчет</button>
+
+                <div id="patrolReport" class="result"></div>
+            </div>
+
+            <!-- Раздел: Составление отчета дозора -->
+            <div id="reportSection" class="section hidden">
+                <h1>Составление отчета дозора</h1>
+                <label for="watchTime">Время дозора (чч:мм-чч:мм):</label>
+                <input type="text" id="watchTime" placeholder="Введите время дозора">
+
+                <label for="watchMembers">Участники дозора (через запятую):</label>
+                <input type="text" id="watchMembers" placeholder="Введите участников дозора">
+
+                <div class="violations">
+                    <button id="noWatchViolations" class="btn small">Не было нарушителей</button>
+                    <button id="yesWatchViolations" class="btn small">Были нарушители</button>
+                    <div class="hidden">
+                        <label for="watchViolators">Нарушители (Имя (id), через запятую):</label>
+                        <input type="text" id="watchViolators" placeholder="Введите нарушителей">
+                    </div>
+                </div>
+
+                <button id="generateWatchReport" class="btn">Составить отчет</button>
+
+                <div id="watchReport" class="result"></div>
+            </div>
+        </div>
+    </div>
+    <footer>Создано Бедокуром</footer>
+    <script src="script.js"></script>
+</body>
+</html>
